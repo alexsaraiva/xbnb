@@ -19,7 +19,7 @@ class FakeMapping {
 
         for (let i = 0; i < qtd; ++i) {
             let item = await this._ramdomItem();
-            item.local = await this._ramdomPosition(0.2);
+            item.local = await this._ramdomPosition(0.1);
             item.photo = item.photo.replace('xx_large', 'x_medium')
             items.push(item);
         }
@@ -30,11 +30,13 @@ class FakeMapping {
         return this.items.then(item => item[Math.floor(Math.random() * (item.length - 1))]);
     }
 
-    async _ramdomPosition(max){
-        let incremtlat = parseFloat((Math.random() * max).toPrecision(5));
-        let incremtlon = parseFloat((Math.random() * max).toPrecision(5));
+    async _ramdomPosition(max) {
+        let incremtlat = parseFloat((Math.random() * (max * 2) + (max * -1)).toPrecision(5));
+        let incremtlon = parseFloat((Math.random() * (max * 2) + (max * -1)).toPrecision(5));
+
         let lat = await this.centerLocal.then(l => l.lat) + incremtlat;
         let lon = await this.centerLocal.then(l => l.lon) + incremtlon;
+
         return {lat, lon}
     }
 }
