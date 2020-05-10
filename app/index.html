@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>xbnx</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1><a class="header__title" href="/">xbnb</a></h1>
+        <form class="search">
+            <input class="search__name" name="loc" type="text" placeholder="São Paulo">
+            <button class="search__submit">search</button>
+        </form>
+    </header>
+
+    <section class="result">
+        <g-list class="result__list"></g-list>
+        <g-maps class="result-map"></g-maps>
+    </section>
+
+    <footer class="footer">© 2020 xbnb. All rights reserved</footer>
+
+    <script type="module" src="index.mjs"></script>
+</body>
+</html>
