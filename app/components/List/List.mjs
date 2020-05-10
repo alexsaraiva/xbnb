@@ -33,9 +33,10 @@ class List extends HTMLElement {
     async _addItems(qtd) {
         let items = await this.fakeM.getItems(qtd);
 
-        EventBus.fire('items', {"items" : items})
-
         if(this.childElementCount < 30) {
+
+            EventBus.fire('items', {"items" : items})
+
             items.forEach((item) => {
                 this.appendChild(new ListItem(item));
             })
